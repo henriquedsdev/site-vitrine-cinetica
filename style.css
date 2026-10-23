@@ -91,6 +91,13 @@ nav ul a:hover {
     color: var(--azul);
 }
 
+#burguer {
+    display: none;
+    color: var(--branco);
+    font-size: 32px;
+    cursor: pointer;
+}
+
 section {
     padding: 90px 10%;
 }
@@ -311,7 +318,54 @@ footer > a:last-child {
     margin-top: 10px;
 }
 
+.sucesso {
+    color: #12d800
+}
+
+.erro {
+    color: #d80000
+}
+
 @media (max-width: 900px) {
+    header nav {
+        position: relative;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    #burguer {
+        display: block;
+        margin-left: auto;
+    }
+
+    header nav ul {
+        display: none;
+        position: absolute;
+        top: calc(100% + 20px);
+        right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        width: 220px;
+        padding: 10px 0;
+        background-color: var(--fundo-cartao);
+        border: 1px solid var(--borda);
+        border-radius: 8px;
+        z-index: 10;
+    }
+
+    header nav ul.ativo {
+        display: flex;
+    }
+
+    header nav ul li a {
+        display: block;
+        padding: 12px 20px;
+    }
+
+    header nav ul li a:hover {
+        background-color: var(--fundo-escuro);
+    }
 
     header {
         padding: 20px 5%;
